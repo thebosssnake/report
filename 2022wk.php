@@ -294,32 +294,36 @@ img{
 			<h1 style="color:#369;">主要结论：</h1>
 			<p class="textstyle"><strong>1、超过四分之三的企业已经踏上人力资源数字化转型征程</strong></p>
 			<p class="textstyle">超过四分之三的企业已经踏上人力资源数字化转型征程，其中，41.0%的企业处于一边实施一边完善的阶段，仅有14.0%的企业目前仍没有任何相关规划。</p>
-			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="http://img01.51jobcdn.com/im/mk/artimages/170174.png" style="width:45%;"/></p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img2.png" style="width:65%;"/></p>
+			<p class="textstyle">不同行业的人力资源管理数字化转型基本与企业自身的现实基础相结合，利用和区分不同的基本要素来确定合适的转型模式和实施路径。</p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img3.png" style="width:95%;"/></p>
 			<br/>
 			<p class="textstyle"><strong>2、现阶段的人力资源转型追求组织和管理的提效、量化人力资本</strong></p>
 			<p class="textstyle">接近八成企业现阶段用数字化来“做内功”，其中，68.0%的企业关注在通过数字化转型提升组织效能和管理效率。已经有42.0%的企业尝试用数字化手段量化分析人力资本来辅助管理决策，但多数企业尚未将数字化作为实现竞争优势的手段。</p>
-			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="https://img01.51jobcdn.com/im/mk/artimages/170175.png" style="width:45%;"/></p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img4.png" style="width:95%;"/></p>
 			<p class="textstyle">基于企业已普遍具备数字化的意识，约有四成的企业已经完成了人力资源单个模块的数字化，并且关注搭建数据基础, 为全面的数字化和智能化做准备。</p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img5.png" style="width:65%;"/></p>
 			<br/>
 			<p class="textstyle"><strong>3、人力资源数字化转型热点领域：人才招募、培训与发展</strong></p>
 			<p class="textstyle">从企业实施人力资源数字化转型的着手模块来看，在IT/互联网/游戏、建筑与房地产、金融、零售、制造业、大健康等十类调研行业领域中，均各有50.0%以上的企业选择人才招募模块作为转型的起点。</p>
 			<p class="textstyle">零售行业和IT/互联网/游戏行业中，各有超过50.0%的企业在薪酬管理和绩效模块开始数字化转型，而这一比例在电子/自动化行业中较少。电子/自动化和通讯/半导体行业中，各有超过50.0%的企业在学习培训模块开始数字化转型。</p>
-			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="https://img01.51jobcdn.com/im/mk/artimages/170176.png" style="width:45%;"/></p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img6.png" style="width:65%;"/></p>
 			<p class="textstyle">超过二成的企业在人才管理的数字化上预算增加，其中，在人才发展模块，除电子/自动化行业，其他行业中均有超过20.0%的企业选择增加预算；在人才招募模块，大健康行业和咨询/服务/教育行业计划增加预算的企业较多。</p>
+			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="./static/img7.png" style="width:65%;"/></p>
 			<br/>
 			<p class="textstyle"><strong>更多发现</strong></p>
-			<p class="textstyle">企业对于毕业生的学历要求如何？<br/>哪些行业最需要本科生？<br/>哪些行业最需要研究生？<br/>相比2022届，不同行业2023届的招聘量会有什么变化？<br/>针对“网课一代”进入职场，HR会怎么说？<br/>......</p>
+			<p class="textstyle">“电话恐惧”，打工人的心病<br/>《编辑部的讨论》：卤蛋、绿茶、床垫，“张兰式”流量模式启示录<br/>00后的职场称呼之殇<br/>......</p>
 
 
 			<p class="textstyle" style="text-align:center; font:-size:1rem; margin-top:2rem; color: #ccc; font-weight:bold;">
-			扫码回复“网课一代”，领取完整报告<br/>
-			<img src="./image/51HR.jpg" style="width:20%;"/></p>
+			扫码回复“数字化”，领取完整报告<br/>
+			<img src="./static/QR2.jpg" style="width:20%;"/></p>
 			
 		</td>
 		<td width="200" align="left" valign="top" style="padding-left:3rem; padding-top:2rem;">
 		
-		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51hrpai.jpg" style="width:100%;"/>关注51HR派获更多资讯</p>
-		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51HR.jpg" style="width:100%;"/>扫码领取完整报告</p>
+		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./static/QR.jpg" style="width:100%;"/>关注51HR派获更多资讯</p>
+		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./static/QR2.jpg" style="width:100%;"/>扫码领取完整报告</p>
 
 		</td>
 	</tr>

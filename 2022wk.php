@@ -1,12 +1,12 @@
 <?php
-// include_once(getenv('ROOT_PATH') . '/common/mkt.bootstrap.php');
+include_once(getenv('ROOT_PATH') . '/common/mkt.bootstrap.php');
 //页面标记
 $sPage = "report2019";
 //搜索历史
 use bll\mkt\awards\AwardsSearchBll;
 
-// $oAwardsSearchBll = new AwardsSearchBll();
-// $aSearchHistory = $oAwardsSearchBll->getAwardsSearchHistory([]);
+$oAwardsSearchBll = new AwardsSearchBll();
+$aSearchHistory = $oAwardsSearchBll->getAwardsSearchHistory([]);
 
 $bWap = false;
 
@@ -364,7 +364,7 @@ $navbar = 5;
 	<div class="m-nav">
 		<div class="min" style="margin:0 auto; max-width:1300px; min-width:1200px">
 			<?php
-            // include_once MKT_TEMPLATE_PATH."/awards/common/header.template.php";
+            include_once MKT_TEMPLATE_PATH."/awards/common/header.template.php";
             ?>
 		</div>
 	</div>

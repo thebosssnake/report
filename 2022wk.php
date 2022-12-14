@@ -1,10 +1,9 @@
 <?php
 include_once(getenv('ROOT_PATH') . '/common/mkt.bootstrap.php');
-//页面标记
+// //页面标记
 $sPage = "report2019";
-//搜索历史
+// //搜索历史
 use bll\mkt\awards\AwardsSearchBll;
-
 $oAwardsSearchBll = new AwardsSearchBll();
 $aSearchHistory = $oAwardsSearchBll->getAwardsSearchHistory([]);
 
@@ -169,7 +168,6 @@ $navbar = 5;
 		}
 
 		.latestre {
-			width: 100%;
 			margin-bottom: 5rem;
 			position: relative;
 			display: flex;
@@ -338,19 +336,26 @@ $navbar = 5;
 			text-align: justify;
 		}
 
-		.focus {
-			width: 900px;
-		}
 
 		.QRcontent {
 			position: sticky;
 			background-color: #fff;
 			height: 0;
 			width: 10rem;
-			z-index: 99;
+			z-index:-1;
 			top: 50px;
 			left: 88%;
 
+		}
+
+		footer {
+			background: #343A40;
+			clear: both;
+			padding: 10px 0;
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+			line-height: 150%;
 		}
 
 		.detail {
@@ -371,9 +376,7 @@ $navbar = 5;
 
 
 	<div class="latestre">
-		<div class="focus">
 			<img src="./static/img1.png" alt="2022" id="movie" class="float-right" style="width:100%; height:500px;" />
-		</div>
 	</div>
 
 	<div class="detail">
@@ -444,10 +447,9 @@ $navbar = 5;
 
 		<div style="margin:5rem 0;">&emsp;</div>
 	</div>
-
 	<!------------------------------------------- 底部 --------------------------------------->
 	<?php include_once("./bottom01_test.php"); ?>
-	<script src="//js.51jobcdn.com/in/js/market/jianli/js/bootstrap.min.js?20180319"></script>
+<script src="//js.51jobcdn.com/in/js/market/jianli/js/bootstrap.min.js?20180319"></script>
 </body>
 
 </html>

@@ -1,15 +1,15 @@
 <?php
-// include_once(getenv('ROOT_PATH') . '/common/mkt.bootstrap.php');
-//é¡µé¢æ ‡è®°
+include_once(getenv('ROOT_PATH') . '/common/mkt.bootstrap.php');
+//Ò³Ãæ±ê¼Ç
 $sPage = "report2019";
-//æœç´¢åŽ†å²
+//ËÑË÷ÀúÊ·
 use bll\mkt\awards\AwardsSearchBll;
-// $oAwardsSearchBll = new AwardsSearchBll();
-// $aSearchHistory = $oAwardsSearchBll->getAwardsSearchHistory([]);
+$oAwardsSearchBll = new AwardsSearchBll();
+$aSearchHistory = $oAwardsSearchBll->getAwardsSearchHistory([]);
 
 $bWap = false;
 
-if (isset($_SERVER['HTTP_X_WAP_PROFILE']) || (isset($_SERVER['HTTP_VIA']) && false !== stristr($_SERVER['HTTP_VIA'], 'wap')) || (isset($_SERVER['HTTP_ACCEPT']) && ((false !== strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml')) && ((false === strpos($_SERVER['HTTP_ACCEPT'], 'text/html')) || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html'))))))  //å¦‚æžœæœ‰HTTP_X_WAP_PROFILEåˆ™ä¸€å®šæ˜¯ç§»åŠ¨è®¾å¤‡
+if (isset($_SERVER['HTTP_X_WAP_PROFILE']) || (isset($_SERVER['HTTP_VIA']) && false !== stristr($_SERVER['HTTP_VIA'], 'wap')) || (isset($_SERVER['HTTP_ACCEPT']) && ((false !== strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml')) && ((false === strpos($_SERVER['HTTP_ACCEPT'], 'text/html')) || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html'))))))  //Èç¹ûÓÐHTTP_X_WAP_PROFILEÔòÒ»¶¨ÊÇÒÆ¶¯Éè±¸
 {
 	$bWap = true;
 }
@@ -20,7 +20,7 @@ else
 
 	if (isset($_SERVER['HTTP_USER_AGENT']))
 	{
-		// ä»ŽHTTP_USER_AGENTä¸­æŸ¥æ‰¾æ‰‹æœºæµè§ˆå™¨çš„å…³é”®å­—
+		// ´ÓHTTP_USER_AGENTÖÐ²éÕÒÊÖ»úä¯ÀÀÆ÷µÄ¹Ø¼ü×Ö
 		if (preg_match("/(" . implode('|', $aAgent) . ")/i", strtolower($_SERVER['HTTP_USER_AGENT'])))
 		{
 			$bWap = true;
@@ -43,9 +43,9 @@ $navbar = 5;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>â€œç½‘è¯¾ä¸€ä»£â€å°±ä¸šå‰æ™¯è°ƒæŸ¥æŠ¥å‘Š</title>
-<meta name="description" content="å‰ç¨‹æ— å¿§ä¸ºä¸ªäººæä¾›å…¨æ–°ã€å‡†ç¡®çš„ä¼ä¸šèŒä½æ‹›è˜ä¿¡æ¯ï¼Œä¸ºä¼ä¸šæä¾›äººæ‰æ‹›è˜ã€çŒŽå¤´ã€åŸ¹è®­ã€æµ‹è¯„å’Œäººäº‹å¤–åŒ…åœ¨å†…çš„å…¨æ–¹ä½çš„äººåŠ›èµ„æºæœåŠ¡ï¼Œå¸®åŠ©ä¸ªäººæ±‚èŒè€…ä¸Žä¼ä¸šæ­å»ºäººæ‰æ‹›å‹Ÿå’Œäººæ‰åŸ¹å…»æ¸ é“ã€‚">
-<meta name="keywords" content="äººæ‰ï¼Œæ‹›è˜ï¼Œç®€åŽ†ï¼Œå·¥ä½œï¼Œæ±‚èŒï¼Œé¢è¯•ï¼Œåº”è˜ï¼Œè·³æ§½ï¼Œé«˜è–ªï¼Œå…¼èŒï¼ŒçŒŽå¤´ï¼Œè–ªé…¬ï¼Œè–ªèµ„ï¼ŒåŸ¹è®­ï¼Œæµ‹è¯„ï¼Œäººäº‹">
+<title>¡°Íø¿ÎÒ»´ú¡±¾ÍÒµÇ°¾°µ÷²é±¨¸æ</title>
+<meta name="description" content="Ç°³ÌÎÞÓÇÎª¸öÈËÌá¹©È«ÐÂ¡¢×¼È·µÄÆóÒµÖ°Î»ÕÐÆ¸ÐÅÏ¢£¬ÎªÆóÒµÌá¹©ÈË²ÅÕÐÆ¸¡¢ÁÔÍ·¡¢ÅàÑµ¡¢²âÆÀºÍÈËÊÂÍâ°üÔÚÄÚµÄÈ«·½Î»µÄÈËÁ¦×ÊÔ´·þÎñ£¬°ïÖú¸öÈËÇóÖ°ÕßÓëÆóÒµ´î½¨ÈË²ÅÕÐÄ¼ºÍÈË²ÅÅàÑøÇþµÀ¡£">
+<meta name="keywords" content="ÈË²Å£¬ÕÐÆ¸£¬¼òÀú£¬¹¤×÷£¬ÇóÖ°£¬ÃæÊÔ£¬Ó¦Æ¸£¬Ìø²Û£¬¸ßÐ½£¬¼æÖ°£¬ÁÔÍ·£¬Ð½³ê£¬Ð½×Ê£¬ÅàÑµ£¬²âÆÀ£¬ÈËÊÂ">
 <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -60,19 +60,19 @@ $navbar = 5;
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- æ–° Bootstrap4 æ ¸å¿ƒ CSS æ–‡ä»¶ -->
+<!-- ÐÂ Bootstrap4 ºËÐÄ CSS ÎÄ¼þ -->
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
  
-<!-- jQueryæ–‡ä»¶ã€‚åŠ¡å¿…åœ¨bootstrap.min.js ä¹‹å‰å¼•å…¥ -->
+<!-- jQueryÎÄ¼þ¡£Îñ±ØÔÚbootstrap.min.js Ö®Ç°ÒýÈë -->
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
  
-<!-- bootstrap.bundle.min.js ç”¨äºŽå¼¹çª—ã€æç¤ºã€ä¸‹æ‹‰èœå•ï¼ŒåŒ…å«äº† popper.min.js -->
+<!-- bootstrap.bundle.min.js ÓÃÓÚµ¯´°¡¢ÌáÊ¾¡¢ÏÂÀ­²Ëµ¥£¬°üº¬ÁË popper.min.js -->
 <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
  
-<!-- æœ€æ–°çš„ Bootstrap4 æ ¸å¿ƒ JavaScript æ–‡ä»¶ -->
+<!-- ×îÐÂµÄ Bootstrap4 ºËÐÄ JavaScript ÎÄ¼þ -->
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!-- å¼•å…¥ echarts.js -->
+<!-- ÒýÈë echarts.js -->
 <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 
 
@@ -88,7 +88,7 @@ $(".flip").click(function(){
 function checkInput()
 {
   	var obj=document.getElementById("tf_search");
-  	if(obj.value==''||obj.value=='è¯·è¾“å…¥æœç´¢å†…å®¹')
+  	if(obj.value==''||obj.value=='ÇëÊäÈëËÑË÷ÄÚÈÝ')
   	{
   	   obj.focus();
   	   return false;
@@ -99,7 +99,7 @@ function checkInput()
 
 
 <style type="text/css">
-html,body{width:100%;height:100%;font-family: "Agency FB","å¾®è½¯é›…é»‘";}
+html,body{width:100%;height:100%;font-family: "Agency FB","Î¢ÈíÑÅºÚ";}
 body {margin:0;padding: 0; border:0; height:100%; overflow:auto;}
 html {overflow:auto !important; overflow:hidden;}
 
@@ -267,7 +267,7 @@ img{
 <div class="m-nav">
 	<div class="min"  style="margin:0 auto; max-width:1300px; min-width:1200px">
 	<?php
-	    // include_once MKT_TEMPLATE_PATH."/awards/common/header.template.php";
+	    include_once MKT_TEMPLATE_PATH."/awards/common/header.template.php";
 	?>    
 	</div>
 </div>
@@ -283,7 +283,7 @@ img{
 	<div class="row" style="width:100%; position:absolute; top:20%; left:10%;">
 		<div class="  briefre  col-xl-5 col-lg-6 col-md-8 col-sm-10"  style="">
 			<div class="latestre_title ">
-				<span style="color: #000;font-size:6rem; font-weight:bold;">â€œç½‘è¯¾ä¸€ä»£â€å°±ä¸šæœºä¼šè°ƒç ”
+				<span style="color: #000;font-size:6rem; font-weight:bold;">¡°Íø¿ÎÒ»´ú¡±¾ÍÒµ»ú»áµ÷ÑÐ
 </span><br/><br/>
 				<span style="color: #000;font-size:2rem; "></span>
 			
@@ -301,38 +301,38 @@ img{
 <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center" style="">
 	<tr>
 		<td width="800" align="left" style="padding:0 2rem;">
-			<p class="textstyle">11æœˆ17æ—¥æ•™è‚²éƒ¨å‘é€šçŸ¥ï¼Œå¼€å±•â€œ2023å±Šé«˜æ ¡æ¯•ä¸šç”Ÿæ ¡å›­æ‹›è˜æœˆâ€ç³»åˆ—ï¼Œè¡¨ç¤º2023å±Šå…¨å›½æ™®é€šé«˜æ ¡æ¯•ä¸šç”Ÿè§„æ¨¡é¢„è®¡è¾¾1158ä¸‡äººï¼ŒåŒæ¯”å¢žåŠ 82ä¸‡äººã€‚</p>
-			<p class="textstyle">è¿™ä¸€å±Šæ¯•ä¸šç”Ÿå¤šæ•°æ˜¯2019å¹´å…¥å­¦ï¼Œç»åŽ†äº†2020~2022å¹´ä¸‰å¹´ç–«æƒ…ï¼Œç½‘è¯¾ä¸Šäº†ä¸‰å¹´ï¼Œæœ‰ç€ä¸Žä¼—ä¸åŒçš„ç‰¹å¾ã€‚å°‘æ•°çš„çº¿ä¸‹è¯¾ã€å°‘æœ‰å®žä¹ ç»åŽ†ï¼Œä»¥è‡³äºŽä¸å°‘å­¦ç”Ÿå¯¹è‡ªå·±çš„å°±ä¸šå‰é€”æ„Ÿåˆ°â€œæ²¡åº•â€ï¼Œè¿žåŒä¸å°‘å®¶é•¿éƒ½åœ¨æ‚²ä¼¤â€”â€”åªèƒ½è¯»ç ”ã€‚</p>
+			<p class="textstyle">11ÔÂ17ÈÕ½ÌÓý²¿·¢Í¨Öª£¬¿ªÕ¹¡°2023½ì¸ßÐ£±ÏÒµÉúÐ£Ô°ÕÐÆ¸ÔÂ¡±ÏµÁÐ£¬±íÊ¾2023½ìÈ«¹úÆÕÍ¨¸ßÐ£±ÏÒµÉú¹æÄ£Ô¤¼Æ´ï1158ÍòÈË£¬Í¬±ÈÔö¼Ó82ÍòÈË¡£</p>
+			<p class="textstyle">ÕâÒ»½ì±ÏÒµÉú¶àÊýÊÇ2019ÄêÈëÑ§£¬¾­ÀúÁË2020~2022ÄêÈýÄêÒßÇé£¬Íø¿ÎÉÏÁËÈýÄê£¬ÓÐ×ÅÓëÖÚ²»Í¬µÄÌØÕ÷¡£ÉÙÊýµÄÏßÏÂ¿Î¡¢ÉÙÓÐÊµÏ°¾­Àú£¬ÒÔÖÁÓÚ²»ÉÙÑ§Éú¶Ô×Ô¼ºµÄ¾ÍÒµÇ°Í¾¸Ðµ½¡°Ã»µ×¡±£¬Á¬Í¬²»ÉÙ¼Ò³¤¶¼ÔÚ±¯ÉË¡ª¡ªÖ»ÄÜ¶ÁÑÐ¡£</p>
 			<br/>
-			<h1 style="color:#369;">ä¼ä¸šå¯¹â€œç½‘è¯¾ä¸€ä»£â€å¦‚ä½•è®¤è¯†ï¼Ÿ</h1>
-			<p class="textstyle">æˆ‘ä»¬ç‰¹åˆ«é‡‡è®¿äº†100å®¶é›‡ä¸»çš„HRï¼Œå¯¹äºŽ2023å±Šæ¯•ä¸šç”Ÿæœ‰ä½•å°è±¡ï¼Œéœ€æ±‚é‡å¦‚ä½•å˜åŒ–ç­‰è¿›è¡Œäº†äº†è§£ï¼Œç»˜åˆ¶äº†æœ¬æœŸçš„ã€Šâ€œç½‘è¯¾ä¸€ä»£â€œå°±ä¸šå‰æ™¯è°ƒæŸ¥æŠ¥å‘Šã€‹ã€‚</p>
+			<h1 style="color:#369;">ÆóÒµ¶Ô¡°Íø¿ÎÒ»´ú¡±ÈçºÎÈÏÊ¶£¿</h1>
+			<p class="textstyle">ÎÒÃÇÌØ±ð²É·ÃÁË100¼Ò¹ÍÖ÷µÄHR£¬¶ÔÓÚ2023½ì±ÏÒµÉúÓÐºÎÓ¡Ïó£¬ÐèÇóÁ¿ÈçºÎ±ä»¯µÈ½øÐÐÁËÁË½â£¬»æÖÆÁË±¾ÆÚµÄ¡¶¡°Íø¿ÎÒ»´ú¡°¾ÍÒµÇ°¾°µ÷²é±¨¸æ¡·¡£</p>
 			<br/>
-			<h1 style="color:#369;">ä¸»è¦å‘çŽ°ï¼š</h1>
-			<p class="textstyle"><strong>å‘çŽ°ä¸€ï¼š52%çš„ä¼ä¸šåªé‡ä¸“ä¸šå’Œèƒ½åŠ›ï¼Œ18%çš„ä¼ä¸šå¯¹ç½‘è¯¾è¡¨ç¤ºæ‹…å¿§</strong></p>
-			<p class="textstyle">è°ƒæŸ¥æ•°æ®æ˜¾ç¤ºï¼Œå…³äºŽâ€œç½‘è¯¾ä¸€ä»£â€è¿›å…¥èŒåœºï¼Œ52%çš„ä¼ä¸šè¡¨ç¤ºä¸ä¼šå¯¹è¿™ä¸€å±Šå­¦ç”Ÿæœ‰è§‚æ„Ÿä¸Šçš„å˜åŒ–ï¼Œæ›´çœ‹é‡çš„æ˜¯ä¸ªäººèƒ½åŠ›ï¼›18%çš„ä¼ä¸šè¡¨ç¤ºå¯¹ç½‘è¯¾ä¸ºä¸»çš„å¤§å­¦æ•™è‚²è´¨é‡ä¸ä¹è§‚ï¼›10%çš„ä¼ä¸šè¡¨ç¤ºæ›´çœ‹é‡æ¯•ä¸šç”Ÿçš„å­¦æ ¡å’Œå­¦åŽ†ã€‚</p>
+			<h1 style="color:#369;">Ö÷Òª·¢ÏÖ£º</h1>
+			<p class="textstyle"><strong>·¢ÏÖÒ»£º52%µÄÆóÒµÖ»ÖØ×¨ÒµºÍÄÜÁ¦£¬18%µÄÆóÒµ¶ÔÍø¿Î±íÊ¾µ£ÓÇ</strong></p>
+			<p class="textstyle">µ÷²éÊý¾ÝÏÔÊ¾£¬¹ØÓÚ¡°Íø¿ÎÒ»´ú¡±½øÈëÖ°³¡£¬52%µÄÆóÒµ±íÊ¾²»»á¶ÔÕâÒ»½ìÑ§ÉúÓÐ¹Û¸ÐÉÏµÄ±ä»¯£¬¸ü¿´ÖØµÄÊÇ¸öÈËÄÜÁ¦£»18%µÄÆóÒµ±íÊ¾¶ÔÍø¿ÎÎªÖ÷µÄ´óÑ§½ÌÓýÖÊÁ¿²»ÀÖ¹Û£»10%µÄÆóÒµ±íÊ¾¸ü¿´ÖØ±ÏÒµÉúµÄÑ§Ð£ºÍÑ§Àú¡£</p>
 			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="http://img01.51jobcdn.com/im/mk/artimages/170174.png" style="width:45%;"/></p>
 			<br/>
-			<p class="textstyle"><strong>å‘çŽ°äºŒï¼šè¿è¾“ç‰©æµã€ç”Ÿäº§åˆ¶é€ è¡Œä¸š æ›´éœ€è¦ä¸“ç§‘</strong></p>
-			<p class="textstyle">å…³äºŽä¼ä¸šå¯¹æ¯•ä¸šç”Ÿå­¦åŽ†çš„éœ€æ±‚ä¸­ï¼Œè°ƒç ”æ˜¾ç¤ºï¼Œæœ€éœ€è¦ä¸“ç§‘çš„å‰äº”ä¸ªè¡Œä¸šä¸ºï¼šè¿è¾“/ç‰©æµã€ç”Ÿäº§åˆ¶é€ ã€é›¶å”®ã€äº’è”ç½‘/ç”µå•†ã€æˆ¿åœ°äº§ã€‚</p>
+			<p class="textstyle"><strong>·¢ÏÖ¶þ£ºÔËÊäÎïÁ÷¡¢Éú²úÖÆÔìÐÐÒµ ¸üÐèÒª×¨¿Æ</strong></p>
+			<p class="textstyle">¹ØÓÚÆóÒµ¶Ô±ÏÒµÉúÑ§ÀúµÄÐèÇóÖÐ£¬µ÷ÑÐÏÔÊ¾£¬×îÐèÒª×¨¿ÆµÄÇ°Îå¸öÐÐÒµÎª£ºÔËÊä/ÎïÁ÷¡¢Éú²úÖÆÔì¡¢ÁãÊÛ¡¢»¥ÁªÍø/µçÉÌ¡¢·¿µØ²ú¡£</p>
 			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="https://img01.51jobcdn.com/im/mk/artimages/170175.png" style="width:45%;"/></p>
 			<br/>
-			<p class="textstyle"><strong>å‘çŽ°ä¸‰ï¼šè¶…è¿‡ä¸€åŠçš„ä¼ä¸š ä¼šå‡å°‘2023å±Šæ¯•ä¸šç”Ÿéœ€æ±‚</strong></p>
-			<p class="textstyle">ç›¸æ¯”2022å±Šï¼Œè¶…è¿‡ä¸€åŠçš„ä¼ä¸šä¼šå‡å°‘å¯¹2023å±Šçš„æ‹›è˜ï¼Œå…¶ä¸­è·¨å›½å…¬å¸æœ€å¤šï¼Œå æ¯”è¾¾61%ï¼Œå…¶æ¬¡æ˜¯å›½æœ‰ä¼ä¸šï¼ˆ59%ï¼‰ã€æ°‘è¥ä¼ä¸šï¼ˆ56%ï¼‰ï¼›å°±å¢žåŠ çš„æ¯”ä¾‹è€Œè¨€ï¼Œå›½æœ‰ä¼ä¸šæœ€å¤šï¼Œå æ¯”ä¸º23%ï¼Œå…¶æ¬¡æ˜¯æ°‘è¥ä¼ä¸šï¼ˆ18%ï¼‰ã€è·¨å›½å…¬å¸ï¼ˆ6%ï¼‰ã€‚</p>
+			<p class="textstyle"><strong>·¢ÏÖÈý£º³¬¹ýÒ»°ëµÄÆóÒµ »á¼õÉÙ2023½ì±ÏÒµÉúÐèÇó</strong></p>
+			<p class="textstyle">Ïà±È2022½ì£¬³¬¹ýÒ»°ëµÄÆóÒµ»á¼õÉÙ¶Ô2023½ìµÄÕÐÆ¸£¬ÆäÖÐ¿ç¹ú¹«Ë¾×î¶à£¬Õ¼±È´ï61%£¬Æä´ÎÊÇ¹úÓÐÆóÒµ£¨59%£©¡¢ÃñÓªÆóÒµ£¨56%£©£»¾ÍÔö¼ÓµÄ±ÈÀý¶øÑÔ£¬¹úÓÐÆóÒµ×î¶à£¬Õ¼±ÈÎª23%£¬Æä´ÎÊÇÃñÓªÆóÒµ£¨18%£©¡¢¿ç¹ú¹«Ë¾£¨6%£©¡£</p>
 			<p class="textstyle" style="text-align:center; margin-top:2rem;"><img src="https://img01.51jobcdn.com/im/mk/artimages/170176.png" style="width:45%;"/></p>
 			<br/>
-			<p class="textstyle"><strong>æ›´å¤šå‘çŽ°</strong></p>
-			<p class="textstyle">ä¼ä¸šå¯¹äºŽæ¯•ä¸šç”Ÿçš„å­¦åŽ†è¦æ±‚å¦‚ä½•ï¼Ÿ<br/>å“ªäº›è¡Œä¸šæœ€éœ€è¦æœ¬ç§‘ç”Ÿï¼Ÿ<br/>å“ªäº›è¡Œä¸šæœ€éœ€è¦ç ”ç©¶ç”Ÿï¼Ÿ<br/>ç›¸æ¯”2022å±Šï¼Œä¸åŒè¡Œä¸š2023å±Šçš„æ‹›è˜é‡ä¼šæœ‰ä»€ä¹ˆå˜åŒ–ï¼Ÿ<br/>é’ˆå¯¹â€œç½‘è¯¾ä¸€ä»£â€è¿›å…¥èŒåœºï¼ŒHRä¼šæ€Žä¹ˆè¯´ï¼Ÿ<br/>......</p>
+			<p class="textstyle"><strong>¸ü¶à·¢ÏÖ</strong></p>
+			<p class="textstyle">ÆóÒµ¶ÔÓÚ±ÏÒµÉúµÄÑ§ÀúÒªÇóÈçºÎ£¿<br/>ÄÄÐ©ÐÐÒµ×îÐèÒª±¾¿ÆÉú£¿<br/>ÄÄÐ©ÐÐÒµ×îÐèÒªÑÐ¾¿Éú£¿<br/>Ïà±È2022½ì£¬²»Í¬ÐÐÒµ2023½ìµÄÕÐÆ¸Á¿»áÓÐÊ²Ã´±ä»¯£¿<br/>Õë¶Ô¡°Íø¿ÎÒ»´ú¡±½øÈëÖ°³¡£¬HR»áÔõÃ´Ëµ£¿<br/>......</p>
 
 
 			<p class="textstyle" style="text-align:center; font:-size:1rem; margin-top:2rem; color: #ccc; font-weight:bold;">
-			æ‰«ç å›žå¤â€œç½‘è¯¾ä¸€ä»£â€ï¼Œé¢†å–å®Œæ•´æŠ¥å‘Š<br/>
+			É¨Âë»Ø¸´¡°Íø¿ÎÒ»´ú¡±£¬ÁìÈ¡ÍêÕû±¨¸æ<br/>
 			<img src="./image/51HR.jpg" style="width:20%;"/></p>
 			
 		</td>
 		<td width="200" align="left" valign="top" style="padding-left:3rem; padding-top:2rem;">
 		
-		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51hrpai.jpg" style="width:100%;"/>å…³æ³¨51HRæ´¾èŽ·æ›´å¤šèµ„è®¯</p>
-		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51HR.jpg" style="width:100%;"/>æ‰«ç é¢†å–å®Œæ•´æŠ¥å‘Š</p>
+		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51hrpai.jpg" style="width:100%;"/>¹Ø×¢51HRÅÉ»ñ¸ü¶à×ÊÑ¶</p>
+		<p class="textstyle" style="text-align:center; font:-size:1rem;"><img src="./image/51HR.jpg" style="width:100%;"/>É¨ÂëÁìÈ¡ÍêÕû±¨¸æ</p>
 
 		</td>
 	</tr>
@@ -344,7 +344,7 @@ img{
 <div style="margin:5rem 0;">&emsp;</div>
 
 
-<!------------------------------------------- åº•éƒ¨ --------------------------------------->
+<!------------------------------------------- µ×²¿ --------------------------------------->
 <?php include_once("./bottom01_test.php"); ?>
 <script src="//js.51jobcdn.com/in/js/market/jianli/js/bootstrap.min.js?20180319"></script>
 </body>
